@@ -2,14 +2,11 @@ import { useSelector } from 'react-redux';
 
 
 function GameScore() {
-  const scorePlayer1 = useSelector((state) => state.player1);
-  const scorePlayer2 = useSelector((state) => state.player2);
-  console.log(scorePlayer1);
-  console.log(scorePlayer2);
+  const stateRedux = useSelector((state) => state);
 
   return (
       <div className="display">
-        Le score est : { scorePlayer1 } - { scorePlayer2 }
+        { stateRedux.playing === false ? 'jeu en pause' : `Le score est : ${ stateRedux.player2 } - ${ stateRedux.player1 }` }
       </div>
   );
 }

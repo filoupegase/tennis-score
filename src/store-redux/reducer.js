@@ -1,5 +1,5 @@
 import initialState from './initialState';
-import { PLAY_PAUSE } from './action';
+import { PLAY_PAUSE, POINT_SCORE } from './action';
 
 
 const reducer = (state = initialState, action) => {
@@ -13,21 +13,16 @@ const reducer = (state = initialState, action) => {
         ...state,
         playing: !state.playing
       };
+    case POINT_SCORE:
+      const player = action.payload.player;
+      const currentPlayerScore = state[player];
+      return {
+        ...state,
+        [player]: currentPlayerScore + 15
+      };
     default:
       return state;
   }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
   if (action.type === 'pointScored') {

@@ -13,8 +13,8 @@ function App() {
         <GameScore />
         <Display />
         <div className="buttons-row">
-          <PointScoreBtn player="joueur 1" />
-          <PointScoreBtn player="joueur 2" />
+          <PointScoreBtn playerId="player1">Point joueur 1</PointScoreBtn>
+          <PointScoreBtn playerId="player2">Point joueur 2</PointScoreBtn>
         </div>
         <div className="buttons-row">
           <ResetScoreBtn />

@@ -6,7 +6,7 @@ function GameScore() {
 
   return (
       <div className="display">
-        { stateRedux.playing === false ? 'jeu en pause' : `Le score est : ${ stateRedux.player2 } - ${ stateRedux.player1 }` }
+        { stateRedux.playing === false ? 'jeu en pause' : `Le score est : ${ stateRedux.player1 } - ${ stateRedux.player2 }` }
       </div>
   );
 }

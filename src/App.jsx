@@ -1,11 +1,16 @@
 import './App.css';
+import PlayPauseBtn from './components/PlayPauseBtn';
+import Display from './components/Display';
+import GameScore from './components/GameScore';
 
 
 function App() {
   return (
-      <h1>
-        Hello OpenClassrooms !
-      </h1>
+      <>
+        <GameScore />
+        <Display />
+        <PlayPauseBtn />
+      </>
   );
 }
 

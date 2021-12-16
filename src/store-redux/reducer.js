@@ -1,19 +1,35 @@
 import initialState from './initialState';
+import { PLAY_PAUSE } from './action';
 
 
 const reducer = (state = initialState, action) => {
-  if (action.type === 'restart') {
-    return initialState;
-  }
-  if (action.type === 'playPause') {
-    if (state.winner) {
+  switch (action.type) {
+    case 'restart':
+      return {
+        initialState
+      };
+    case PLAY_PAUSE:
+      return {
+        ...state,
+        playing: !state.playing
+      };
+    default:
       return state;
-    }
-    return {
-      ...state,
-      playing: !state.playing
-    };
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   if (action.type === 'pointScored') {
     const player = action.payload.player;
     const otherPlayer = player === 'player1' ? 'player2' : 'player1';
@@ -52,5 +68,6 @@ const reducer = (state = initialState, action) => {
   }
   return state;
 };
+
 
 export default reducer;
